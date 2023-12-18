@@ -1,0 +1,15 @@
+[package]
+name = "cron_boring"
+version = "0.0.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+[dependencies]
+worker = "0.0.18"
+reqwest = { version = "*", features = ["json"], default-features = false }
+serde_json = "*"
+serde = "*"
+[profile.release]
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"

@@ -1,0 +1,10 @@
+name = "cron_boring"
+main = "build/worker/shim.mjs"
+compatibility_date = "2022-01-20"
+
+[[kv_namespaces]]
+binding = "EMAR_BORING"
+id = "61162a1378574f29a92a30a7d54974c2"
+
+[build]
+command = "cargo install -q worker-build --version 0.0.10 && worker-build --release"
