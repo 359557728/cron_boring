@@ -1,0 +1,18 @@
+[package]
+name = "cron_boring"
+version = "0.0.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+[dependencies]
+worker = "*"
+reqwest = { version = "*", features = ["json"], default-features = false }
+serde_json = "*"
+serde = "*"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = "symbols"
