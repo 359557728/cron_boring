@@ -42,7 +42,7 @@ pub async fn scheduled(evt: ScheduledEvent, env: Env, _: ScheduleContext) {
         "0/5 * * * *" => {
             zombie_task_stop(env).await;
         }
-        "0/15 16-7 * * *" => {
+        "0/15 0-15 * * *" => {
             pending_task_notify(env).await;
         }
         _ => {}
