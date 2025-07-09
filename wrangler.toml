@@ -1,0 +1,13 @@
+name = "cron_boring"
+main = "build/worker/shim.mjs"
+compatibility_date = "2024-11-11"
+
+[[kv_namespaces]]
+binding = "EMAR_BORING"
+id = "61162a1378574f29a92a30a7d54974c2"
+
+[build]
+command = "cargo install -q worker-build && worker-build --release"
+
+[placement]
+mode = "smart"
